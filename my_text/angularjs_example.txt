@@ -1,0 +1,10 @@
+angular js
+
+https://www.allrecipes.com/
+https://www.devillard.ch/
+https://www.dominos.com.br/
+https://psmag.com/
+https://frontier.com/
+https://www.jetblue.com/
+
+DELETE t1 FROM gl_job_skills WHERE t1.id IN (SELECT id FROM (SELECT t2.id, t3.id AS tmp_id FROM gl_job_skills AS t2 JOIN gl_job_categories AS t3 ON t2.category_id=t3.id) WHERE tmp_id IS NULL)

@@ -1,0 +1,139 @@
+OPTION A
+Url: Africarider.net/myadmin
+U: admin@drupp.com
+P: Drupp@123Nigeria!
+
+
+Option B
+http://africarider.net/Taxi/
+U: admin@gmail.com
+P: 123456
+1. Please study these 2 Admin panels. You will notice a lot of Dashboard cards in use in Option B. I need those mini Dashboards to be available in Option A.
+
+Freelancer should introduce sub menus for the main menus ON OPTION A. Please check FIGMA layout 
+
+
+- Create Submenus for the menus on left and create Micro Dashboards for the sections. 
+
+
+For instance Riders.
+
+
+Riders
+
+  --Single Rides 
+
+  -- Pool Rides 
+
+  --Keke
+
+
+When user selects the sub menu  - a set of Dashboards showing counters display with logs.
+
+
+Single -  Mini Dashboard + Logs
+
+Keke - Mini Dashboard + Logs
+
+Pool - Mini Dashboard + Logs
+
+
+Do same for Drivers, Riders, etc on the system. Mini Dashboards with counters.
+User Avatar
+Wallexbaba
+Digital T.
+Public profile
+Download the App
+Dashboard
+My Projects
+Browse Projects
+Browse Freelancers
+Browse Local Jobs
+Inbox
+Deposit Funds
+Get Support
+Log Out
+Copyright 2020
+
+Freelancer Technology Pty Limited
+Switch Account
+Vishal P.
+ANGULAR BACK END REQUIRES UPDATE AND UI CHANGE.
+Loading earlier messages...
+Hello
+12 minutes ago
+Profile picture of vishalpardhi27
+Hi
+How are you today?
+11 minutes ago
+I'm good. You?
+11 minutes ago
+Profile picture of vishalpardhi27
+Doing good. Thanks
+Please website link
+10 minutes ago
+Hello,
+
+I have 2 back end codes for my ride hailing app.
+
+I want to merge functionalities at the back end into a new back end. I have a new UI for that purpose and will be willing to show you.
+
+New proposed Admin:
+
+https://www.figma.com/file/GQuzZO5Ey7IFqPKcgdlexK/Drupp-Backend?node-id=0%3A1
+
+The 2 Admin Panels
+
+OPTION A
+Url: Africarider.net/myadmin
+U: admin@drupp.com
+P: Drupp@123Nigeria!
+
+Option B
+http://africarider.net/Taxi/
+U: admin@gmail.com
+P: 123456
+
+I want functionalities in Option B moved to Option A.
+
+That would be first stage of Project.
+
+There are mobile apps which work on the back ends but I want the new functionalities to work in mobile apps linked to Option A.
+
+
+left menu in option a
+
+Dashboard
+Current Rides
+Users
+Rides
+Schedule Rides
+Chat
+Fares
+Vehicles Details
+Commissiion
+Bus
+Drupp Shop
+Newsletter
+In-App Notifications
+Messaging Services
+Notifications
+Sub Admin
+Terms and Conditions
+Support
+Rating Review
+
+left menu in option b
+Dashboard
+Site Earnings
+Map View
+Drivers
+Car Types
+Users
+Rides
+Setting
+Cancellation
+Review
+Coupon Codes
+payment Detail
+Reports/Feedbacks

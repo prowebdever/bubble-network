@@ -1,0 +1,40 @@
+payoneer: 	EUR 185 + 9(pending) 
+		USD 415 + 500 + 300(to Jan)
+paypal		EUR 300($365.14) + 100($118.76)
+componay	USD 400(2615 CNY)
+account		USD 400($160=>Nam)
+Novemember	USD 400(Payoneer)
+
+2020.12.7 2615.3 CNY ($400)
+2020.12.26 300 EUR($365.14)
+2020.12.28 $118.76
+
+1. save betting data for each client into out db.
+**2. prevent multiple select on betting.
+3. show only owner betting data for each client.
+***4. must be able to edit email template on admin UI. 
+5. Check each bet and update our BD if they lost or won and record on their account too also send email if they won 
+
+https://apostasfortaleza.com/demo/
+https://apostasfortaleza.com/demo/assets/js/jquery-3.3.1.min.js
+
+Loteria(s): Instantanea do Ceará;
+Data(s): 25/12/2020;
+Número(s):
+1236, 1245, 1325
+Sorteio(s): 5º;
+Valor: R$ 1,50
+
+Loteria(s): Instantanea do Ceará;
+Data(s): 25/12/2020;
+Número(s):
+1236, 1256, 1356
+Sorteio(s): 5º;
+Valor: R$ 1,50
+
+Loteria(s): Instantanea do Ceará;
+Data(s): 25/12/2020;
+Modalidade: CENTENA
+Número(s): 123, 145, 163
+Valor: R$ 3,00
+Sorteio(s): 3º;5º;
