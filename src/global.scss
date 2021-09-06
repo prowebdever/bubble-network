@@ -1,0 +1,190 @@
+// http://ionicframework.com/docs/theming/
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+
+@import 'mixins.scss';
+@import 'bubble.scss';
+
+:root {
+  --ion-tabbar-background-color: transparent;
+  --ion-tabbar-border-color-rgb: rgb(255, 255, 255);
+  --inner-border-width: 0 !important;
+  --ion-color-shade: rgb(255, 255, 255) !important;
+  --ion-color-shade: #488aff;
+  --inner-border-width: 1;
+}
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: normal;
+    src: url('assets/fonts/Poppins-Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'PoppinsBold';
+    font-style: normal;
+    font-weight: normal;
+    src: url('assets/fonts/Poppins-Bold.otf') format('opentype');
+}
+//  WELCOME PAGES
+ion-app.poppins-font {
+    --ion-font-family: 'Poppins'
+}
+.welcome-button {
+  font-weight: 300;
+  height: 40px;
+  width: 100px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  font-weight: 300;
+  background: linear-gradient(to top, #63fbf8 0%, #fb98fd 100%);
+  outline: none;
+  margin: 0 5px;
+}
+.welcome-button:hover {
+  background: linear-gradient(to top, rgb(62, 159, 250) 0%, #f260ff 100%);
+}
+.welcome-button:disabled:hover {
+  cursor: not-allowed;
+  background: linear-gradient(to top, #63fbf8 0%, #fb98fd 100%);
+}
+
+.welcome-link {
+  color: #488aff;
+  margin: 10px;
+}
+
+.welcome-page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  ion-item {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.welcome-form-segment {
+  margin-top: auto;
+  margin-bottom: 20%;
+}
+
+.input-field {
+  color: #666565;
+  border: 1px solid #a1a1a1;
+  border-radius: 4px;
+  margin-bottom: 2px;
+}
+
+.error-message {
+  position: absolute;
+  font-size: 11px;
+  bottom: 2px;
+  color: mediumvioletred;
+}
+
+.flex-center {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+.float-right {
+  float: right;
+}
+.text-right {
+  text-align: right;
+}
+
+// ionic styles overwrites
+.tab-btn {
+  background: url(assets/bubble.png) no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.toast-ios {
+  --background: linear-gradient(to top, #63fbf8 0%, #fb98fd 100%);
+  --button-color: white;
+  --color: white;
+}
+
+.popover-content {
+  top: 0 !important;
+  left: 0 !important;
+  display: flex !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  background-color: white !important;
+  border-radius: 0 !important;
+}
+.popover-viewport {
+  height: 100%;
+
+ion-card {
+    height: 100% !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+  }
+}
+app-main {
+  margin: 4px 0;
+}
+ion-tabs {
+  height: calc(100% - 45px) !important;
+}
+ion-list {
+  overflow-y: auto;
+  // margin: 10px !important;
+}
+// .ion-page {
+//   margin: 5px 0;
+// }
+
+// app styles overwrites
+app-bubbles-container {
+  height: 100%;
+}
+
+button.action-sheet-button.gallery_icon{
+    background-image:url('assets/gallery.png');
+    background-repeat: no-repeat;
+    background-position: 95% 10px !important;
+    background-size: 30px;
+}
+button.action-sheet-button.camera_icon{
+    background-image:url('assets/camera.png');
+    background-repeat: no-repeat;
+    background-position: 95% 10px !important;
+    background-size: 30px;
+}
+button.action-sheet-button.video_gallery_icon{
+    background-image:url('assets/video-gallery.png');
+    background-repeat: no-repeat;
+    background-position: 95% 10px !important;
+    background-size: 30px;
+}
+button.action-sheet-button.record_video_icon{
+    background-image:url('assets/record.png');
+    background-repeat: no-repeat;
+    background-position: 95% 10px !important;
+    background-size: 30px;
+}
+ion-select{max-width: unset !important;}
+ion-select.w100{width: 100%;}
+.top-search{
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}

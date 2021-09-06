@@ -1,0 +1,19 @@
+<main-header></main-header>
+<ion-content>
+  <div class="image_container" (click)="selectImage()">
+    <div *ngIf="adData.imageURL; else add_image" class="object_fit">
+      <img src={{adData.imageURL}} alt="Photo"/>
+    </div>
+  </div>
+  <ng-template #add_image>
+    <div><img src="assets/add-image.png" class="add_image"/></div>
+  </ng-template>
+  <ion-item>
+    <ion-label position="floating">Description</ion-label>
+    <ion-textarea auto-grow="true" rows="6" [(ngModel)]="adData.description"></ion-textarea>
+  </ion-item>
+  <div style="text-align:center; margin-top: 20px;">
+    <button class="welcome-button" (click)="postImage()">Post Image</button>
+  </div>
+</ion-content>
+<app-footer></app-footer>

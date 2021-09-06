@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "793790968316",
+    "firebase_url": "https://kittykat-f2c10.firebaseio.com",
+    "project_id": "kittykat-f2c10",
+    "storage_bucket": "kittykat-f2c10.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:793790968316:android:3657d8b0e9dfc4a5884279",
+        "android_client_info": {
+          "package_name": "com.kittykat.bubble"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "793790968316-a5luup7u1l9g2atqouhpvn6upucjd9rt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXA2HZJ0Tni6R-toJ-OmUxFg0Ky4iujfU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "793790968316-a5luup7u1l9g2atqouhpvn6upucjd9rt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

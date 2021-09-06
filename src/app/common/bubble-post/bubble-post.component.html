@@ -1,0 +1,59 @@
+<ion-card class="bubble-post">
+  <div [ngClass]="{ 'image-space': true, 'image-closed': sidebarOpen }">
+    <div class="author" (click)="gotoProfile()">{{name}}</div>
+    <ion-icon name="close" (click)="close()" class="close-icon"></ion-icon>
+    <div class="profile-bubble ball bubble">
+      <div (click)="playVideo()"
+        class="profile-image"
+        [ngStyle]="{ 'background-image': 'url(' + fileData.imageURL + ')' }"
+      ><img src="assets/video_icon.png" *ngIf="fileData.videoUrl"/></div>
+    </div>
+    <div class="description">{{ fileData.description }}</div>
+    <div class="icons">
+      <ion-icon
+        name="heart"
+        *ngIf="fileLikedByMe"
+        (click)="like()"
+        [color]="'danger'"
+      ></ion-icon>
+      <ion-icon
+        name="heart-empty"
+        *ngIf="!fileLikedByMe"
+        (click)="like()"
+      ></ion-icon>
+      <ion-icon
+        name="text"
+        (click)="toggleSidebar()"
+        color="primary"
+      ></ion-icon>
+      <div class="likes">{{ fileData.likes.length }}&nbsp; likes</div>
+    </div>
+  </div>
+  <div [ngClass]="{ 'side-open': sidebarOpen, 'side-content': true }">
+    <ion-card-content>
+      <ion-icon name="close" (click)="toggleSidebar()" class="close-icon close-comment"></ion-icon>
+      <div>
+        <b>{{ fileData.author }}</b>&nbsp;<br/>{{ fileData.description }}
+      </div>
+      <div>
+        <div *ngFor="let comment of fileData.comments">
+          <b>{{ comment.author }}</b> &nbsp;{{ comment.text }}
+        </div>
+      </div>
+      <div class="comment">
+        <ion-label color="primary">Comment</ion-label>
+        <ion-textarea
+          #commentArea
+          placeholder="Enter your comment here..."
+          [(ngModel)]="newComment"
+          maxlength="2000"
+        ></ion-textarea>
+        <ion-icon
+          (click)="comment()"
+          name="leaf"
+          [color]="newComment.length ? 'primary' : null"
+        ></ion-icon>
+      </div>
+    </ion-card-content>
+  </div>
+</ion-card>

@@ -1,0 +1,51 @@
+<ion-content>
+  <div padding
+    class="welcome-page">
+    <div text-center>
+      <img class="bubble-logo" src="assets/bubble-logo.png"
+        alt="">
+    </div>
+    <div class="welcome-form-segment">
+      <ion-row justify-content-center>
+        <ion-col align-self-center
+          size-md="6"
+          size-lg="5"
+          size-xs="12">
+          <div class="recovery-header" padding>
+            <p>
+              Please, enter your email here and we'll send you recovery instructions.
+            </p>
+            <form [formGroup]="resetPasswordForm">
+              <ion-item class="input-field"
+                lines="none">
+                <ion-input type="text"
+                  formControlName="email"
+                  placeholder="Email"></ion-input>
+                <div class="error-message"
+                  *ngIf="!resetPasswordForm.get('email').valid  && resetPasswordForm.get('email').dirty">
+                  Please enter a valid email.
+                </div>
+              </ion-item>
+            </form>
+          </div>
+          <ion-row justify-content-center
+            justify-content-center
+            align-content-center>
+            <button [disabled]="resetPasswordForm.invalid"
+              class="welcome-button"
+              (click)="recovery()"
+              fill="outline">Recover</button>
+          </ion-row>
+        </ion-col>
+        <ion-col align-self-center>
+          <div class="welcome-link"
+            (click)="navigate('')"
+            text-center>Sign In</div>
+          <div class="welcome-link"
+            (click)="navigate('signup')"
+            text-center>Sign Up</div>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+</ion-content>

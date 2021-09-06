@@ -1,0 +1,22 @@
+ion-content{
+    padding: 0px;
+    border-collapse: collapse;
+
+    ion-list{
+
+        ion-item{
+            border-bottom: 1px solid #ddd;
+            padding: 8px;
+
+            ion-avatar{
+                width:64px;
+                height: 64px;
+            }
+
+            ion-label *{
+                font-size: 1.2em;
+            }
+        }
+    }
+
+}

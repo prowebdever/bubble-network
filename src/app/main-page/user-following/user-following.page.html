@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button *ngIf="checkIsFollowing()==-1" class="btn-follow" (click)="following()">Follow</ion-button>
+      <ion-button *ngIf="checkIsFollowing()>-1" class="btn-follow" (click)="nofollowing()">UnFollow</ion-button>
+    </ion-buttons>
+    <ion-title *ngIf="userData">{{userData.username}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<div class="profile-container" *ngIf="userData">
+  <div class="profile-header" [ngStyle]="{'background-image': 'url(' + userData.banner + ')'}">
+    <div class="profile-bubble ball bubble">
+      <div class="profile-image" [ngStyle]="{'background-image': 'url(' + userData.profileImage + ')'}">
+      </div>
+    </div>
+    <div class="follow">
+      <button *ngIf="userData" class="welcome-button" (click)="showFollowers()">Followers<div>{{userData.followers.length}}</div></button>
+      <button *ngIf="userData" class="welcome-button" (click)="showFollowings()">Following<div>{{userData.following.length}}</div></button>
+    </div>
+  </div>
+</div>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let friend of friends">
+      <ion-avatar slot="start">
+        <img [src]="friend.imageURL" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{friend.description}}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

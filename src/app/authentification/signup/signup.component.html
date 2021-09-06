@@ -1,0 +1,120 @@
+<ion-content>
+  <div padding class="welcome-page">
+    <div [hidden]="step === 3" class="bubble-logo" text-center>
+      <img src="assets/bubble-logo.png" alt="">
+    </div>
+    <div [hidden]="step !== 1" class="welcome-form-segment">
+      <ion-row justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div padding>
+            <form [formGroup]="signupForm">
+              <ion-item class="input-field" lines="none">
+                <ion-label position="floating">Email</ion-label>
+                <ion-input type="text" formControlName="email"></ion-input>
+                <div class="error-message" *ngIf="!signupForm.get('email').valid  && signupForm.get('email').dirty">
+                  Please enter a valid email.
+                </div>
+              </ion-item>
+              <ion-item class="input-field" lines="none">
+                <ion-label position="floating">Password</ion-label>
+                <ion-input type="password" formControlName="password"></ion-input>
+                <div class="error-message"
+                  *ngIf="!signupForm.get('password').valid  && signupForm.get('password').dirty">
+                  Please enter a valid password.
+                </div>
+              </ion-item>
+              <ion-item class="input-field" lines="none">
+                <ion-label position="floating">Repeat Password</ion-label>
+                <ion-input type="password" [(ngModel)]="repeatPassword" [ngModelOptions]="{standalone: true}"></ion-input>
+              </ion-item>
+            </form>
+          </div>
+          <ion-row justify-content-center justify-content-center align-content-center>
+            <button [disabled]="signupForm.invalid || signupForm.get('password').value !== repeatPassword"
+              class="welcome-button" (click)="register()" fill="outline">Sign Up</button>
+          </ion-row>
+          <ion-col align-self-center>
+            <div class="welcome-link" (click)="navigate('')" text-center>Sign In</div>
+          </ion-col>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div [hidden]="step !== 2" class="welcome-form-segment">
+      <ion-row justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div padding>
+            <ion-item class="input-field" lines="none">
+              <ion-label position="floating">First Name</ion-label>
+              <ion-input type="text" [(ngModel)]="signupData.firstName"></ion-input>
+            </ion-item>
+            <ion-item class="input-field" lines="none">
+              <ion-label position="floating">Last Name</ion-label>
+              <ion-input type="text" [(ngModel)]="signupData.lastName"></ion-input>
+            </ion-item>
+            <ion-item class="input-field" lines="none">
+              <ion-label position="floating">Username</ion-label>
+              <ion-input type="text" (ngModelChange)="change()" [(ngModel)]="signupData.username"></ion-input>
+            </ion-item>
+          </div>
+          <ion-row justify-content-center justify-content-center align-content-center>
+            <button
+              [disabled]="!signupData.firstName.length && !signupData.lastName.length && !signupData.username.length"
+              class="welcome-button" (click)="step = 3" fill="outline">Next</button>
+          </ion-row>
+          <ion-col align-self-center>
+            <div class="welcome-link" (click)="navigate('')" text-center>Sign In</div>
+          </ion-col>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div [hidden]="step !== 3" class="welcome-form-segment">
+      <ion-row justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div class="user-image" text-center>
+            <div class="image-container">
+              <img src={{imageURI}} alt="Your Picture" class="{{imageVerified}}" />
+            </div>
+            <button class="welcome-button" (click)="selectImage()">Get Image</button>
+          </div>
+          <div padding class="ion-form">
+            <ion-item class="input-field" lines="none">
+              <ion-select placeholder="Select Gender" [(ngModel)]="signupData.gender" class="w100">
+                <ion-select-option value="f">Female</ion-select-option>
+                <ion-select-option value="m">Male</ion-select-option>
+                <ion-select-option value="o">Other</ion-select-option>
+                <ion-select-option value="none">Won't say</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="input-field" lines="none">
+              <ion-label position="floating">Birthday</ion-label>
+              <ion-datetime display-format="MMM DD, YYYY" (ngModelChange)="change()"
+                [(ngModel)]="signupData.birthday"></ion-datetime>
+            </ion-item>
+            <ion-item class="input-field" lines="none">
+              <ion-select placeholder="Select Job" [(ngModel)]="signupData.job" class="w100">
+                <ion-select-option *ngFor="let job of jobList" [value]="entry">{{job}}</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="input-field" lines="none">
+              <ion-label position="floating">Country</ion-label>
+              <ion-input type="text" [(ngModel)]="signupData.country"></ion-input>
+            </ion-item>
+            <ion-item class="input-field" lines="none">
+              <ion-label position="floating">Website Link</ion-label>
+              <ion-input type="text" [(ngModel)]="signupData.websiteLink"></ion-input>
+            </ion-item>
+          </div>
+          <ion-row justify-content-center justify-content-center align-content-center>
+            <button class="welcome-button" (click)="step = 2" fill="outline">Back</button>
+            <button class="welcome-button"
+              [disabled]="!signupData.gender.length || !signupData.country.length || !signupData.websiteLink.length"
+              (click)="acceptTerms()" fill="outline">Finish</button>
+          </ion-row>
+          <ion-col align-self-center>
+            <div class="welcome-link" (click)="navigate('')" text-center>Sign In</div>
+          </ion-col>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,33 @@
+ion-content {
+  overflow: hidden;
+  top: 5px;
+
+  app-bubbles-container {
+    height: calc(100% - 56px);
+  }
+}
+
+.header {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  button {
+    background: transparent;
+    outline: none;
+  }
+  .bubble-logo {
+    width: 50px;
+    height: 50px;
+
+    background: url(../../../assets/bubble-logo.png) no-repeat;
+    background-size: contain;
+  }
+  ion-icon {
+    width: 30px;
+    height: 30px;
+  }
+}

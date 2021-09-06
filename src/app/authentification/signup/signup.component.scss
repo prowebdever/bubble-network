@@ -1,0 +1,39 @@
+.user-image {
+  width: 100%;
+  height: 45vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .image-container{
+    width: 28vh; height: 28vh;
+    margin-bottom: 5%;
+    border:2vh solid #633;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  img {
+    height: 100%; width: 100%;
+    object-fit:cover;
+  }
+
+  img.verified  {
+    border-color:#c33;
+  }
+}
+
+.ion-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+ion-datetime, ion-select {
+  padding: 8px 8px 8px 0 !important;
+}
+
+ion-col {
+  ion-item{border:none;}
+}

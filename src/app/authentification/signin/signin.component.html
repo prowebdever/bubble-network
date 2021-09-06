@@ -1,0 +1,54 @@
+<ion-content>
+  <div padding
+    class="welcome-page">
+    <div class="bubble-logo" text-center>
+      <img src="assets/bubble-logo.png"
+        alt="">
+    </div>
+    <div class="welcome-form-segment">
+      <ion-row justify-content-center>
+        <ion-col align-self-center
+          size-md="6"
+          size-lg="5"
+          size-xs="12">
+          <div padding>
+            <form [formGroup]="loginForm">
+              <ion-item class="input-field"
+                lines="none">
+                <ion-label position="floating">Email</ion-label>
+                <ion-input type="text"
+                  formControlName="email" ></ion-input>
+                <div class="error-message" *ngIf="!loginForm.get('email').valid && loginForm.get('email').dirty">
+                  Please enter a valid email.</div>
+              </ion-item>
+              <ion-item class="input-field"
+                lines="none">
+                <ion-label position="floating">Password</ion-label>
+                <ion-input type="password"
+                  formControlName="password"></ion-input>
+                <div class="error-message" *ngIf="!loginForm.get('password').valid && loginForm.get('password').dirty">
+                  Please enter a valid password.</div>
+              </ion-item>
+            </form>
+          </div>
+          <ion-row justify-content-center
+            justify-content-center
+            align-content-center>
+            <button [disabled]="loginForm.invalid"
+              class="welcome-button"
+              (click)="login()"
+              fill="outline">Sign In</button>
+          </ion-row>
+        </ion-col>
+        <ion-col align-self-center>
+          <div class="welcome-link"
+            (click)="navigate('signup')"
+            text-center>Sign Up</div>
+          <div class="welcome-link"
+            (click)="navigate('recovery')"
+            text-center>Restore Password</div>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+</ion-content>

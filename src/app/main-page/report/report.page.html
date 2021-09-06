@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Report</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item class="input-field" lines="none">
+    <ion-label position="floating">User</ion-label>
+    <ion-input type="text" [(ngModel)]="subject"></ion-input>
+  </ion-item>
+  <ion-item class="input-field" lines="none">
+    <ion-label position="floating">Content</ion-label>
+    <ion-textarea [(ngModel)]="content" rows="10"></ion-textarea>
+  </ion-item>
+  <ion-row justify-content-center justify-content-center align-content-center>
+    <button class="welcome-button" (click)="sendEmail()" fill="outline">Send</button>
+  </ion-row>
+</ion-content>

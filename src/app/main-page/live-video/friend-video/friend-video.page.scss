@@ -1,0 +1,22 @@
+a.video{
+    position: relative;
+    float: right;
+  ion-icon {
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+  }
+}
+#my-video{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: calc(100vh - 45px);
+ }
+ #errorMsg{
+    position: absolute;
+    top: 5px; left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(255,0,0,0.1);
+    color: darkred;
+ }

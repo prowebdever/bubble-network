@@ -1,0 +1,77 @@
+.age-range {
+  ion-label {
+    margin-bottom: -25px;
+    margin-left: 15px;
+    margin-top: 30px;
+  }
+}
+
+.bubble-scene {
+  margin: 20px 0;
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  .scene-item {
+    position: relative;
+    width: 100px;
+    height: 100px;
+
+    .profile-bubble {
+      position: absolute;
+    }
+  }
+
+  .price-badge {
+    position: absolute;
+    bottom: -40px;
+    white-space: nowrap;
+  }
+}
+.hidden {
+  visibility: collapse;
+}
+ion-buttons {
+  width: 100%;
+  height: 144px;
+  display: flex;
+  justify-content: space-around;
+
+  button {
+    color: #666666;
+    background-color: white;
+  }
+
+  ion-icon {
+    width: 100%;
+    height: 30px;
+  }
+}
+/* Define the icons */
+.scene-item {
+  // position: absolute;
+  margin: 30px;
+  display: block;
+}
+
+/* Define the animations for the icons */
+.scene-item {
+  // animation-name: floating;
+  // -webkit-animation-name: floating;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+}
+.scene-item:nth-child(1n) {
+  animation-duration: 4s;
+}
+.scene-item:nth-child(2n) {
+  animation-duration: 5s;
+}
+.scene-item:nth-child(3n) {
+  animation-duration: 3s;
+}

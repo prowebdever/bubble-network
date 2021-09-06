@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>{{friend.username}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <video id="my-video" autoplay playsinline></video>
+  <div id="errorMsg" *ngIf="getError()">{{error_msg}}</div>
+</ion-content>

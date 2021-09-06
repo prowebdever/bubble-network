@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>My bubbles</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let bubble of bubbles">
+      <ion-avatar slot="start">
+        <img [src]="bubble.imageURL" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{bubble.description}}</h2>
+        <h3>{{getFormattedDate(bubble.date)}} <ion-icon name="heart" color="danger"></ion-icon> {{bubble.likes.length}}</h3>
+      </ion-label>
+      <ion-icon (click)="presentActionSheet(bubble.uid)"
+                name="more"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Add Friends</ion-title>
+  </ion-toolbar>
+</ion-header>
+<div class="top-search" slot="fixed">
+  <ion-item lines="none">
+    <ion-label position="floating">Search User</ion-label>
+    <ion-input [(ngModel)]="searchString" (input)="onSearch($event.target.value)"></ion-input>
+  </ion-item>
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addFriends()">
+      <ion-icon name="checkmark-circle-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</div>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let friend of friends">
+      <ion-checkbox slot="start" [(ngModel)]="friend.isChecked"></ion-checkbox>
+      <ion-avatar slot="start">
+        <img [src]="friend.url" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{friend.username}}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-infinite-scroll *ngIf="!isLastPageReached()" (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

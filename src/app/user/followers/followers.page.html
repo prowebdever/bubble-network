@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Followers: {{followers.length}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let follower of followers">
+      <ion-avatar slot="start">
+        <img [src]="follower.profileImage" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{follower.username}}</h2>
+        <h3>{{follower.title}}</h3>
+      </ion-label>
+      <ion-button slot="end" class="btn-follow" *ngIf="checkIsSelf() && !checkIsFollowing(follower.uid)" (click)="following(follower.uid)">Follow</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

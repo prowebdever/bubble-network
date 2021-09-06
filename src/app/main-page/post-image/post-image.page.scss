@@ -1,0 +1,52 @@
+ion-content {
+  overflow: hidden;
+  top: 5px;
+
+  border-image: linear-gradient(to left, #63fbf8 0%, #fb98fd 100%);
+  border-image-slice: 1;
+  border-width: 3px;
+  border-style: solid;
+
+}
+
+.header {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  button {
+    background: transparent;
+    outline: none;
+  }
+  .bubble-logo {
+    width: 50px;
+    height: 50px;
+
+    background: url(../../../assets/bubble-logo.png) no-repeat;
+    background-size: contain;
+  }
+  ion-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 0px;
+  }
+}
+
+.profile-container{margin: 10px;}
+.image_container{
+    width: calc(100% - 20px); height: 180px;
+    border: 1px solid #ccc; overflow:hidden;
+    margin:10px;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+}
+.object_fit{
+    width: 100%; height: 100%;
+    overflow:hidden;
+}
+.image_container img:not(.add_image){width: 100%; height: 100%; object-fit:cover;}

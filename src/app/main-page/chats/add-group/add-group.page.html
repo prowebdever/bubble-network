@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Create Group</ion-title>
+  </ion-toolbar>
+</ion-header>
+<div class="top-search" slot="fixed">
+  <ion-item lines="none">
+    <ion-label position="floating">Enter Group name</ion-label>
+    <ion-input [(ngModel)]="groupName"></ion-input>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label position="floating">Search Friend</ion-label>
+    <ion-input [(ngModel)]="searchString"></ion-input>
+  </ion-item>
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="createGroup()">
+      <ion-icon name="checkmark-circle-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</div>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let friend of friends | searchFilter:searchString; let i = index;">
+      <ion-checkbox slot="start" [(ngModel)]="friend.isChecked"></ion-checkbox>
+      <ion-avatar slot="start">
+        <img [src]="friend.url" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{friend.username}}</h2>
+        <h3>{{friend.title}}</h3>
+      </ion-label>
+      <ion-icon (click)="removeFriend(friend.uid)" name="remove"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

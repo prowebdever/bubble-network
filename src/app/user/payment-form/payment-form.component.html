@@ -1,0 +1,63 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="end">
+        <ion-button (click)="close()">
+          <ion-icon name="close"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>Payment Details</ion-title>
+    </ion-toolbar>
+  </ion-header>
+<ion-content>
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-row>
+        <ion-col>Total Payment</ion-col>
+        <ion-col class="price"> ${{price}} </ion-col>
+      </ion-row>
+    </ion-card-header>
+    <ion-card-content>
+      <form action="/" method="post" id="payment-form">
+        <div class="form-row group">
+          <label>
+            <div id="card-element" class="field"> <!-- a Stripe Element will be inserted here. --> </div>
+          </label>
+        </div>
+        <div id="card-errors" role="alert"></div>
+        <button type="submit" class="welcome-button">Make Payment ${{price}}</button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<!--<form class="checkout">-->
+<!--  <div class="checkout-header">-->
+<!--    <h1 class="checkout-title">-->
+<!--      Checkout-->
+<!--      <span class="checkout-price">${{price}}</span>-->
+<!--    </h1>-->
+<!--  </div>-->
+<!--  <p>-->
+<!--    <input type="text"-->
+<!--      class="checkout-input checkout-name"-->
+<!--      placeholder="Your name">-->
+<!--    <input type="text"-->
+<!--      class="checkout-input checkout-exp"-->
+<!--      placeholder="MM" [(ngModel)]="cardMonth" [ngModelOptions]="{standalone: true}">-->
+<!--    <input type="text"-->
+<!--      class="checkout-input checkout-exp"-->
+<!--      placeholder="YY" [(ngModel)]="cardYear" [ngModelOptions]="{standalone: true}">-->
+<!--  </p>-->
+<!--  <p>-->
+<!--    <input type="text"-->
+<!--      class="checkout-input checkout-card"-->
+<!--      placeholder="4111 1111 1111 1111" [(ngModel)]="cardNumber" [ngModelOptions]="{standalone: true}">-->
+<!--    <input type="text"-->
+<!--      class="checkout-input checkout-cvc"-->
+<!--      placeholder="CVC"  [(ngModel)]="cardCVV" [ngModelOptions]="{standalone: true}">-->
+<!--  </p>-->
+<!--  <p>-->
+<!--    <input type="button" (click)="payWithStripe()"-->
+<!--      value="Purchase"-->
+<!--      class="checkout-btn">-->
+<!--  </p>-->
+<!--</form>-->

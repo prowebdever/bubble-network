@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="userData">{{userData.username}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="profile-container" *ngIf="userData">
+    <div class="profile-header" [ngStyle]="{'background-image': 'url(' + userData.banner + ')'}">
+      <div class="profile-bubble ball bubble">
+        <div class="profile-image" [ngStyle]="{'background-image': 'url(' + userData.profileImage + ')'}">
+        </div>
+      </div>
+      <div class="follow">
+        <div class="user-site" *ngIf="userData.websiteLink"><a href="{{getUserLink(userData.websiteLink)}}" target="_blank">{{userData.websiteLink}}</a></div>
+        <button class="welcome-button" (click)="following()">Follow</button>
+      </div>
+    </div>
+  </div>
+  <ion-list *ngIf="userData">
+    <ion-item>
+      <ion-label>First Name</ion-label>
+      <div class="user_data">{{userData.firstName}}</div>
+    </ion-item>
+    <ion-item>
+      <ion-label>Last Name</ion-label>
+      <div class="user_data">{{userData.lastName}}</div>
+    </ion-item>
+    <ion-item>
+      <ion-label>Username</ion-label>
+      <div class="user_data">{{userData.username}}</div>
+    </ion-item>
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <div class="user_data">{{userData.email}}</div>
+    </ion-item>
+    <ion-item>
+      <ion-label>Birthday</ion-label>
+      <div class="user_data">{{userData.birthday.month.text}} {{userData.birthday.day.text}} {{userData.birthday.year.text}}</div>
+    </ion-item>
+    <ion-item>
+      <ion-label>Gender</ion-label>
+      <div class="user_data">{{userData.gender}}</div>
+    </ion-item>
+    <ion-item>
+      <ion-label>Job</ion-label>
+      <div class="user_data">{{userData.job}}</div>
+    </ion-item>
+    <ion-item>
+      <ion-label>Country</ion-label>
+      <div class="user_data">{{userData.country}}</div>
+    </ion-item>
+    <ion-item>
+      <ion-label>Website Link</ion-label>
+      <div class="user_data" *ngIf="userData.websiteLink"><a href="{{getUserLink(userData.websiteLink)}}" target="_blank">{{userData.websiteLink}}</a></div>
+    </ion-item>
+    <ion-item>
+      <ion-label>Following</ion-label>
+      <div class="user_data" *ngIf="userData.following">{{userData.following.length}}</div>
+    </ion-item>
+    <ion-item>
+      <ion-label>Followers</ion-label>
+      <div class="user_data" *ngIf="userData.followers">{{userData.followers.length}}</div>
+    </ion-item>
+  </ion-list>
+</ion-content>

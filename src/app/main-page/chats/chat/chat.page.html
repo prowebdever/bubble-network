@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title (click)="gotoUserProfile()">
+      {{chat.name}} <span *ngIf="chat.isGroup">({{chat.users.length}})</span>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="gotoUserProfile()">
+        <div class="avatar">
+          <img [src]="chat.profileImage" *ngIf="chat.profileImage"/>
+        </div>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content #content>
+  <input type="hidden" [(ngModel)]="allMessages"/>
+  <div class="hidden">
+    <ion-row *ngFor="let message of allMessages | async"></ion-row>
+  </div>
+  <ion-grid>
+    <ion-row *ngFor="let message of messages">
+      <ion-col size="10" *ngIf="!message.isMine">
+        <div>
+          <div class="avatar" slot="start">
+            <img [src]="message.profileImage" *ngIf="message.profileImage">
+          </div>
+        </div>
+        <div class="message_content">
+          <span class="name">{{message.name}} {{message.date}}</span>
+          <p class="message other-message">{{message.message}}</p>
+        </div>
+      </ion-col>
+      <ion-col size="10" [offset]="2" *ngIf="message.isMine">
+        <div class="message_content my-message">
+          <span class="name">{{message.date}}</span>
+          <p class="message" ion-long-press [interval]="400" (longPressed)="deleteMsg(message.uid)">{{message.message}}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-textarea autoGrow="true" class="message-input" rows="1" maxLength="500" [(ngModel)]="newMsg"  placeholder="Type a message">
+      </ion-textarea>
+      <ion-buttons>
+        <ion-button [disabled]="newMsg === ''" (click)="sendMessage()">
+          <ion-icon name="paper-plane"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

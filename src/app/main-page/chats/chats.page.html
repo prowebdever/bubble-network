@@ -1,0 +1,30 @@
+<main-header></main-header>
+<div class="top-search" slot="fixed">
+  <ion-fab vertical="top" horizontal="end"  slot="fixed">
+    <ion-fab-button (click)="presentActionSheet()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-item lines="none">
+    <ion-label position="floating">Search Chat</ion-label>
+    <ion-input [(ngModel)]="searchString"></ion-input>
+  </ion-item>
+</div>
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let chat of allChats | async | searchFilter:searchString">
+      <ion-avatar slot="start" (click)="toDialog(chat.uid)">
+        <img [src]="chat.profileImage" *ngIf="chat.profileImage"/>
+      </ion-avatar>
+      <ion-label (click)="toDialog(chat.uid, chat.other)">
+        <h2>{{chat.name}}</h2>
+        <h3>{{chat.lastMessage}}</h3>
+      </ion-label>
+      <span class="badge" *ngIf="!isViewed(chat.viewed)"></span>
+      <ion-icon *ngIf="chat.uid" (click)="removeChat(chat.uid, chat.isGroup)" name="remove"></ion-icon>
+      <ion-icon *ngIf="!chat.uid" (click)="deleteFriend(chat.other)" name="remove"></ion-icon>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+<app-footer></app-footer>

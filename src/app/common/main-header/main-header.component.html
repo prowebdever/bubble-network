@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="header">
+      <ion-menu-button></ion-menu-button>
+      <a (click)="navigate('/main')">
+        <button icon-start>
+          <div class="bubble-logo"></div>
+        </button>
+      </a>
+      <a (click)="navigate('/live-video')" class="video">
+        <ion-icon name="videocam" ios="ios-videocam"></ion-icon>
+        <live-video-badge *ngIf="user.uid" [uid]="user.uid"></live-video-badge>
+      </a>
+    </div>
+  </ion-toolbar>
+</ion-header>

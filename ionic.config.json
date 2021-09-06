@@ -1,0 +1,7 @@
+{
+  "name": "bubble-network",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

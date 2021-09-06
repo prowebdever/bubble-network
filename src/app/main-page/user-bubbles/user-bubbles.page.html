@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button *ngIf="!checkIsFollowing()" class="btn-follow" (click)="following()">Follow</ion-button>
+      <ion-button *ngIf="checkIsFollowing()" class="btn-follow" (click)="unfollowing()">UnFollow</ion-button>
+    </ion-buttons>
+    <ion-title *ngIf="userData">{{userData.username}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="profile-container" *ngIf="userData">
+    <div class="profile-header" [ngStyle]="{'background-image': 'url(' + userData.banner + ')'}">
+      <div class="profile-bubble ball bubble">
+        <div class="profile-image" [ngStyle]="{'background-image': 'url(' + userData.profileImage + ')'}">
+        </div>
+      </div>
+      <div class="follow">
+        <button *ngIf="userData" class="welcome-button" (click)="navigate('followers/' + userData.uid)">Followers<div>{{userData.followers.length}}</div></button>
+        <button *ngIf="userData" class="welcome-button" (click)="navigate('following/' + userData.uid)">Following<div>{{userData.following.length}}</div></button>
+      </div>
+    </div>
+  </div>
+  <app-bubbles-container [files]="bubbles" (childEvent)="initBubbles()"></app-bubbles-container>
+</ion-content>

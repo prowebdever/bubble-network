@@ -1,0 +1,140 @@
+<ion-content padding>
+  <ion-item style="margin-top:30px;">
+    <ion-label>Target Audience</ion-label>
+    <ion-select multiple="true"
+      placeholder="Select Audience">
+      <ion-select-option *ngFor="let entry of targetedAudience"
+        [value]="entry.val">{{entry.val}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <div class="age-range">
+
+    <ion-label>Age: from {{dualValue2.lower}} to {{dualValue2.upper}}</ion-label>
+
+    <ion-range [(ngModel)]="dualValue2"
+      (ionChange)="onRangeChange()"
+      min="0"
+      max="130"
+      step="1"
+      pin="true"
+      dualKnobs="true">
+    </ion-range>
+  </div>
+
+  <ion-item>
+    <ion-label>Detailed Targeting</ion-label>
+    <ion-select multiple="true">
+      <ion-select-option *ngFor="let entry of dummyOccupations"
+        [value]="entry">{{entry}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Locations</ion-label>
+    <ion-select multiple="true">
+      <ion-select-option *ngFor="let entry of dummyLocations"
+        [value]="entry">{{entry}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-label>Packages</ion-label>
+  <div class="bubble-scene">
+    <div *ngFor="let file of files; let i = index;"
+      class="scene-item beaker"
+      [ngStyle]="{'animation-delay': file.animationDelay}">
+      <div class="profile-bubble ball bubble circle"
+        [ngStyle]="{'animation-delay': file.animationDelay}">
+        <div class="profile-image"
+          [ngStyle]="{'background-image': 'url(' + file.url + ')', 'animation-delay': file.animationDelay}"></div>
+        <div *ngIf="file.redBorderAnimation"
+          class="red-border"></div>
+        <div *ngIf="file.starsAnimation"
+          class='stars-container'>
+          <div class="star-five"></div>
+          <div class="star-five"></div>
+          <div class="star-five"></div>
+          <div class="star-five"></div>
+          <div class="star-five"></div>
+          <div class="star-five"></div>
+          <div class="star-five"></div>
+          <div class="star-five"></div>
+        </div>
+        <div *ngIf="file.raysAnimation"
+          class='ray_box'>
+          <div class="ray ray1"></div>
+          <div class="ray ray2"></div>
+          <div class="ray ray3"></div>
+          <div class="ray ray4"></div>
+          <div class="ray ray5"></div>
+          <div class="ray ray6"></div>
+          <div class="ray ray7"></div>
+          <div class="ray ray8"></div>
+        </div>
+        <div *ngIf="file.coloredLinesAnimation"
+          class="loader-wrapper">
+          <div class="loader"></div>
+        </div>
+      </div>
+      <div class="price-badge">{{file.price}}</div>
+    </div>
+
+  </div>
+  <ion-item>
+    <div class="flex-center">Package</div>
+    <ion-select [(ngModel)]="selectedPackage"
+      placeholder="Select package of your choice">
+      <ion-select-option *ngFor="let entry of packages"
+        [value]="entry">{{entry}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Duration</ion-label>
+    <ion-input [(ngModel)]="amountOfWeeks"
+      type="number"
+      placeholder="Amount of weeks you want to run ad"></ion-input>
+  </ion-item>
+  <ion-item>
+    <div class="flex-center">Bubble Type</div>
+    <ion-select [(ngModel)]="bubbleType" placeholder="Select a bubble type" (ionChange)="onSelectChange()">
+      <ion-select-option >Photo</ion-select-option>
+      <ion-select-option >Video</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <div *ngIf="bubbleType" lines="none" class="flex-center">
+    <button class="flex-center" *ngIf="bubbleType=='Photo'" class="welcome-button" (click)="selectPhoto()">Select Photo</button>
+    <button class="flex-center" *ngIf="bubbleType=='Video'" class="welcome-button" (click)="selectVideo()">Select Video</button>
+  </div>
+  <div *ngIf="bubbleType=='Photo' && adData.imageURL" class="object_fit">
+    <img src={{adData.imageURL}} alt="Photo"/>
+  </div>
+  <ion-list *ngIf="bubbleType=='Video' && adData.videoUrl">
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="assets/video-icon.png" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{getFilename(adData.videoUrl)}}</h2>
+      </ion-label>
+      <ion-icon (click)="playVideo()" name="play"></ion-icon>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="bubbleType == 'Photo' || bubbleType=='Video'">
+    <ion-item>
+      <ion-label position="floating">Description</ion-label>
+      <ion-textarea auto-grow="true" rows="6" [(ngModel)]="adData.description"></ion-textarea>
+    </ion-item>
+  </ion-list>
+  <div class="progress_bar" *ngIf="is_uploading">
+    <div [ngStyle]="{'width': progress_percent}"><span *ngIf="progress>10">{{progress}}%</span></div>
+  </div>
+
+  <div *ngIf="finalPrice" lines="none" class="flex-center">
+    Your total price: {{finalPrice}}$
+  </div>
+  <div *ngIf="finalPrice" lines="none"
+    class="flex-center">
+    <button class="flex-center" class="welcome-button" (click)="openPayment()" >Confirm</button>
+  </div>
+
+</ion-content>

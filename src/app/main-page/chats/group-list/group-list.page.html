@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>{{chat.name}} ({{chat.users.length}})</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let user of users" (click)="gotoUserProfile(user.uid)">
+      <ion-avatar slot="start">
+        <img [src]="user.profileImage" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{user.username}}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

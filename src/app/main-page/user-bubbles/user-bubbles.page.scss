@@ -1,0 +1,67 @@
+.close-icon {
+    position: absolute;
+    right: 0px;
+    width: 25px;
+    height: 25px;
+    margin: 10px;
+    top: -2px;
+    background-color: gray;
+  }
+.profile-container {
+  position: relative;
+  margin: 0px;
+  margin-bottom: 0px;
+}
+.profile-header {
+  height: 25vh;
+  background-size: 100%;
+}
+.profile-bubble {
+  position: absolute;
+  bottom: -40px;
+  left: 15px;
+  text-align: right;
+  z-index:1;
+
+  .profile-image {
+    // background: url(../../../assets/profile-picture.jpg);
+  }
+}
+.user-site {
+  padding: 0 20px 20px;
+  text-align: right;
+  color: #00a2ff;
+  font-style: italic;
+  white-space: nowrap;
+  max-width: 60vw;
+  text-overflow: ellipsis;
+}
+
+.follow {
+  position: absolute;
+  bottom: -35px ;
+  right:10px;
+  z-index: 1;
+
+  button:first-child {
+    margin-right: 5px;
+  }
+  .welcome-button {
+    height: 4vh;
+    width: 25vw;
+    margin-right: 5px;
+    float: right;
+    max-width: 120px;
+  }
+}
+ion-list{margin-top: 45px; height: calc(100% - 200px);}
+ion-item{border-bottom: 1px solid #ccc;}
+ion-label{font-size: 14px; color: var(--ion-color-primary);}
+.btn-follow{
+    background: linear-gradient(to top, #63fbf8 0%, #fb98fd 100%);
+    color: white;
+    border-radius: 8px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 15px;
+}

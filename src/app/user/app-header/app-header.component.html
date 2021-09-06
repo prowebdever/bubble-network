@@ -1,0 +1,23 @@
+<main-header></main-header>
+<div class="profile-container" *ngIf="userData">
+  <div class="profile-header" [ngStyle]="{'background-image': 'url(' + userData.banner + ')'}">
+    <div class="profile-bubble ball bubble">
+      <div class="profile-image" [ngStyle]="{'background-image': 'url(' + userData.profileImage + ')'}">
+      </div>
+      <p class="username">{{userData.username}}</p>
+    </div>
+
+    <div *ngIf="userData" class="follow">
+      <div class="user-site" *ngIf="userData.websiteLink"><a href="{{getUserLink(userData.websiteLink)}}" target="_blank">{{userData.websiteLink}}</a></div>
+      <button class="welcome-button" (click)="navigate('/followers/' + userData.uid)">
+        Followers
+        <div *ngIf="userData.followers">{{userData.followers.length}}</div>
+      </button>
+      <button class="welcome-button" (click)="navigate('/following/' + userData.uid)">
+        Following
+        <div *ngIf="userData.following">{{userData.following.length}}</div>
+      </button>
+    </div>
+
+  </div>
+</div>

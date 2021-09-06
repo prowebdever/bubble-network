@@ -1,0 +1,84 @@
+.profile-container {
+  position: relative;
+  margin: 0px;
+  margin-bottom: 0px;
+}
+.profile-header {
+  height: 25vh;
+  background-size: 100%;
+  // background: url(../../../assets/colored-brick-wall.jpg) repeat;
+}
+.profile-bubble {
+  position: absolute;
+  bottom: -40px;
+  left: 15px;
+  text-align: right;
+  z-index:1;
+
+  .profile-image {
+    // background: url(../../../assets/profile-picture.jpg);
+  }
+}
+.user-site {
+  padding: 0 20px 20px;
+  text-align: right;
+  color: #00a2ff;
+  font-style: italic;
+  white-space: nowrap;
+  max-width: 60vw;
+  text-overflow: ellipsis;
+}
+
+.follow {
+  position: absolute;
+  bottom: -35px ;
+  right:10px;
+  z-index: 1;
+
+  button:first-child {
+    margin-right: 5px;
+  }
+  .welcome-button {
+    height: 4vh;
+    width: 25vw;
+    margin-right: 5px;
+    float: right;
+    max-width: 120px;
+  }
+}
+.header {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  button {
+    background: transparent;
+    outline: none;
+  }
+  .bubble-logo {
+    width: 50px;
+    height: 50px;
+
+    background: url(../../../assets/bubble-logo.png) no-repeat;
+    background-size: contain;
+  }
+  ion-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+.username{
+    position: absolute;
+    bottom: -27px;
+    padding: 3px 10px;
+    font-weight: bold;
+    z-index: 2;
+    max-width: 120%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}

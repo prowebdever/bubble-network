@@ -1,0 +1,15 @@
+.profile-container{margin: 10px;}
+.image_container{
+    width: calc(100% - 20px); height: 180px;
+    border: 1px solid #ccc; overflow:hidden;
+    margin:10px;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+}
+.object_fit{
+    width: 100%; height: 100%;
+    overflow:hidden;
+}
+.image_container img:not(.add_image){width: 100%; height: 100%; object-fit:cover;}
